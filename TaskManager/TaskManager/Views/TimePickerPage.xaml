@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.Views.TimePickerPage"
+             xmlns:local="clr-namespace:TaskManager.ViewComponents;assembly=TaskManager"
+             xmlns:localEnums="clr-namespace:TaskManager.Enums;assembly=TaskManager">
+  
+  <ContentPage.Content>    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="10">
+      <AbsoluteLayout>
+        <local:ClockView
+          ClockItems="{Binding Path=Hours}"
+          InnerText="Hours"
+          OnClockItemClicked="{Binding SetHoursCommand}"
+         />
+        <local:CircleView
+          Radius="20"
+          FillColor="{StaticResource Key=Clouds}"
+          InnerText="AM"
+          InnerTextSize="15"
+          TapCommand="{Binding SetTimesOfDayCommand}"
+          AbsoluteLayout.LayoutBounds=".0, 1, AutoSize, AutoSize"
+          AbsoluteLayout.LayoutFlags="PositionProportional"
+        />
+        <local:CircleView
+          Radius="20"
+          FillColor="{StaticResource Key=Clouds}"
+          InnerText="PM"
+          InnerTextSize="15"
+          TapCommand="{Binding SetTimesOfDayCommand}"
+          AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+          AbsoluteLayout.LayoutFlags="PositionProportional"
+         />
+      </AbsoluteLayout>      
+      <local:ClockView
+        ClockItems="{Binding Path=Mins}"
+        InnerText="Mins"
+        OnClockItemClicked="{Binding SetMinsCommand}"
+      />
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+        <Button Text="Set" Command="{Binding SetTimeCommand}" />
+        <Label
+          Text="{Binding Path=Time, StringFormat='{}{0:hh\\:mm}'}"
+          VerticalTextAlignment="Center"
+          FontSize="Large"
+          Margin="10, 0, 10, 0"
+         />
+        <Button
+          Text="Back"
+          Command="{Binding GoBackCommand}"
+        />
+      </StackLayout>      
+    </StackLayout>
+  </ContentPage.Content>
+  
+</ContentPage>

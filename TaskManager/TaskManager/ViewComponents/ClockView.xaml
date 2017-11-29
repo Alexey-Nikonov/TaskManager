@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.ViewComponents.ClockView"
+             xmlns:local="clr-namespace:TaskManager.ViewComponents;assembly=TaskManager"
+             x:Name="ClockView">
+  <ContentView.Content>
+    <StackLayout>
+      <Frame
+        x:Name="ClockViewFrame"
+        HorizontalOptions="Start"
+        Margin="0"
+        Padding="5"
+        HasShadow="False"
+        BackgroundColor="White"
+        CornerRadius="125"
+        WidthRequest="250"
+        HeightRequest="250">
+        >
+        <!--<Absolu--><!--teLayout BackgroundColor="Blue">
+          <Label Text="123" AbsoluteLayout.LayoutBounds="250, 250, AutoSize, AutoSize" BackgroundColor="Red"></Label>
+          <ListView x:Name="clockItemsList" ItemSelected="OnListItemSelected" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell AbsoluteLayout.LayoutBounds="250, 250, 100, 100">
+                  <ViewCell.View>
+                    <local:CicrleView
+                      Radius="20.0"
+                      FillColor="Honeydew"
+                      InnerText="{Binding InnerText}"                    
+                      InnerTextSize="20"
+                     />
+                    --><!--InnerText="{Binding Path=InnerText, Source={x:Reference Name=ClockView}}"-->
+                    <!--<StackLayout Orientation="Horizontal" Padding="10">
+                  <StackLayout>
+                    <Label
+                          Text="{Binding Name}"
+                          FontSize="Medium"
+                      />
+                    <StackLayout Orientation="Horizontal">
+                      <Label
+                            Text="{Binding Date, StringFormat='{0:MM.dd.yyyy}'}"                                                
+                            FontSize="Small"
+                        />
+                      <Label
+                            Text="{Binding Time, StringFormat='{0:HH:mm}'}"                                                
+                            FontSize="Small"
+                        />
+                    </StackLayout>
+                  </StackLayout>
+                  <Button
+                      Text="Delete"
+                      FontSize="Small"
+                      HorizontalOptions="EndAndExpand"
+                      Clicked="OnItemDeleted"
+                      CommandParameter="{Binding Id}"
+                    />
+                </StackLayout>--><!--
+                  </ViewCell.View>
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </AbsoluteLayout>-->        
+      </Frame>
+    </StackLayout>
+    <!--<StackLayout>
+      <Frame
+        HorizontalOptions="Start"
+        Margin="0"
+        Padding="0"
+        HasShadow="False"
+        BackgroundColor="White"
+        CornerRadius="150"
+        WidthRequest="300"
+        HeightRequest="300">
+        >
+        <local:CicrleView
+          Radius="40.0"
+          FillColor="Honeydew"
+          InnerText="exSap"
+          InnerTextSize="20"          
+         />
+      </Frame>
+    </StackLayout>-->
+  </ContentView.Content>
+</ContentView>

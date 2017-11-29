@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.App">
+  <Application.Resources>
+
+    <ResourceDictionary>
+      <Color x:Key="Asbestos">#7f8c8d</Color>
+      <Color x:Key="WetAsphalt">#34495e</Color>
+      <Color x:Key="Alizarin">#27ae60</Color>
+      <Color x:Key="Clouds">#ecf0f1</Color>
+      
+      <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Key=Alizarin}" />
+      </Style>
+
+      <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource Key=Clouds}" />
+        <Setter Property="BorderRadius" Value="10" />
+        <Setter Property="TextColor" Value="{StaticResource Key=Asbestos}" />
+      </Style>
+
+      <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource Key=WetAsphalt}" />
+      </Style>
+    </ResourceDictionary>
+
+  </Application.Resources>
+</Application>

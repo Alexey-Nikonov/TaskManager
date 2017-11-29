@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.ViewComponents.CircleView"
+             x:Name="CircleView">
+  <ContentView.Content>
+    <StackLayout>
+      <Frame
+        HorizontalOptions="Start"
+        Margin="0"
+        Padding="0"
+        HasShadow="False"        
+        BackgroundColor="{Binding Path=FillColor, Source={x:Reference Name=CircleView}}"
+        CornerRadius="{Binding Path=Radius, Source={x:Reference Name=CircleView}}"
+        WidthRequest="{Binding Path=CircleWidth, Source={x:Reference Name=CircleView}}"
+        HeightRequest="{Binding Path=CircleHeight, Source={x:Reference Name=CircleView}}">
+        <Frame.GestureRecognizers>
+          <TapGestureRecognizer
+            Command="{Binding Path=TapCommand, Source={x:Reference Name=CircleView}}"
+            CommandParameter="{Binding Path=InnerText, Source={x:Reference Name=CircleView}}"
+           />
+        </Frame.GestureRecognizers>
+        <Label
+          Text="{Binding Path=InnerText, Source={x:Reference Name=CircleView}}"
+          FontSize="{Binding Path=InnerTextSize, Source={x:Reference Name=CircleView}}"
+          TextColor="{Binding Path=InnerTextColor, Source={x:Reference Name=CircleView}}"
+          HorizontalOptions="Center"
+          VerticalTextAlignment="Center" />
+      </Frame>
+    </StackLayout>    
+  </ContentView.Content>
+</ContentView>
+

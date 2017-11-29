@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.Views.TodoListPage"
+             x:Name="TodoListPage"
+             Title="Tasks">
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Add todo" Command="{Binding CreateItemCommand}" />
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout>
+        <ListView
+          x:Name="todoItemsList"
+          HasUnevenRows="True"
+          ItemsSource="{Binding TodoItems}"
+          SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+          >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <ViewCell.View>
+                  <StackLayout Orientation="Horizontal" Padding="10">
+                    <StackLayout>
+                      <Label
+                          Text="{Binding Name}"
+                          FontSize="Medium"
+                      />
+                      <StackLayout Orientation="Horizontal">
+                        <Label
+                            Text="{Binding Date, StringFormat='{0:dd-MM-yyyy}'}"                                                
+                            FontSize="Small"
+                        />
+                        <Label
+                            Text="{Binding Time, StringFormat='{}{0:hh\\:mm}'}"
+                            FontSize="Small"
+                        />
+                      </StackLayout>
+                    </StackLayout>
+                    <Button
+                      Text="Delete"
+                      FontSize="Small"
+                      HorizontalOptions="EndAndExpand"
+                      Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference TodoListPage}}"
+                      CommandParameter="{Binding Id}"
+                    />
+                  </StackLayout>
+                </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
