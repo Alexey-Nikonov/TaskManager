@@ -89,8 +89,7 @@ namespace TaskManager.ViewModels
             if (todoItem != null)
             {
                 await repository.UpdateAsync(todoItem);
-
-                //int pos = TodoItems.IndexOf(todoItem);
+                
                 int pos = TodoItems.IndexOf(TodoItems.Where(x => x.Id == todoItem.Id).SingleOrDefault());
                 TodoItems.RemoveAt(pos);
                 TodoItems.Insert(pos, todoItem);

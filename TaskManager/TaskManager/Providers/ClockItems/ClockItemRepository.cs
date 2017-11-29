@@ -25,6 +25,7 @@ namespace TaskManager.Providers
         
         public IEnumerable<ClockItem> GetMinsItemsAsync() => minsClockItems;
 
+        // переделать в json
         private IList<ClockItem> amHoursClockItems = new List<ClockItem>()
         {
             new ClockItem
